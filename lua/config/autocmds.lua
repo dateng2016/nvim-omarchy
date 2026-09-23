@@ -17,3 +17,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "r", "o" })
   end,
 })
+
+-- VS Code style "Better Comments" highlighting (# ! / # ? / # * / # todo:)
+require("config.better_comments").setup()
