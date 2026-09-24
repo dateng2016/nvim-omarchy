@@ -20,3 +20,13 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- VS Code style "Better Comments" highlighting (# ! / # ? / # * / # todo:)
 require("config.better_comments").setup()
+
+-- Never soft-wrap lines. LazyVim's `lazyvim_wrap_spell` autocmd turns wrap on
+-- for markdown/text/gitcommit; this runs after it and turns wrap back off
+-- (spell checking is kept).
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("no_wrap", { clear = true }),
+  callback = function()
+    vim.opt_local.wrap = false
+  end,
+})

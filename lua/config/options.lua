@@ -5,3 +5,4 @@ require("config.remote_clipboard").setup()
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 vim.g.autoformat = false
+vim.opt.wrap = false
